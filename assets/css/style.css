@@ -84,8 +84,7 @@ i:hover {
 }
 
 footer {
-  justify-content: center;
-  align-items: center;
-  position: absolute;
+  margin: auto;
   bottom: 0;
+  position: fixed;
 }

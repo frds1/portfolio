@@ -13,10 +13,11 @@ const titulo = document.querySelector('.nome');
 typeWrite(titulo);
 
 class NavBar {
-  constructor(menu, navList, navLinks) {
+  constructor(menu, navList, navLinks, nav) {
     this.menu = document.querySelector(menu);
     this.navList = document.querySelector(navList);
     this.navLinks = document.querySelectorAll(navLinks);
+    this.nav = document.querySelector(nav);
     this.activeClass = "active";
 
     this.handleClick = this.handleClick.bind(this);
@@ -33,6 +34,7 @@ class NavBar {
   handleClick() {
     this.navList.classList.toggle(this.activeClass);
     this.menu.classList.toggle(this.activeClass);
+    this.nav.classList.toggle(this.activeClass);
     this.animateLinks();
   }
 
@@ -52,6 +54,7 @@ const navbar = new NavBar(
   ".menu",
   ".nav-list",
   ".nav-list li",
+  ".navbar",
 );
 
 navbar.init();

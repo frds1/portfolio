@@ -104,14 +104,19 @@ a:hover {
 nav {
   display: flex;
   align-items: center;
-  font-family: "Space Mono";
   height: 8vh;
   justify-content: end;
   padding-inline-end: 1rem;
+  padding-left: 1rem;
+  position: absolute;
+  right: 0;
+  width: 15vw;
+  transition: 0.3s;
 }
 
 .navbar.active {
   background-color: #23232e;
+  transition: 0.3s;
 }
 
 .nav-list {
@@ -120,16 +125,18 @@ nav {
   position: absolute;
   top: 8vh;
   right: 0;
-  width: 20vw;
+  width: 15vw;
   height: 92vh;
-  background: #23232e;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transform: translateX(100%);
   transition: transform 0.3s ease-in;
+  transition: 0.3s;
   margin-top: 0px;
   margin-bottom: 0px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: "Space Mono";
 }
 
 .nav-list li {
@@ -139,6 +146,8 @@ nav {
 
 .nav-list.active {
   transform: translateX(0);
+  background: #23232e;
+  transition: 0.3s;
 }
 
 .menu {

@@ -17,6 +17,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+	padding-top: 25rem;
+	padding-bottom: 25rem;
 }
 
 .container {
@@ -87,4 +89,99 @@ footer {
   margin: auto;
   bottom: 0;
   position: fixed;
+}
+
+a {
+  color : #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 8vh;
+  justify-content: end;
+  padding-inline-end: 1rem;
+  padding-left: 1rem;
+  position: absolute;
+  right: 0;
+  width: 15vw;
+  transition: 0.3s;
+  top: 0;
+}
+
+.navbar.active {
+  background-color: #23232e;
+  transition: 0.3s;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  width: 15vw;
+  height: 92vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: "Space Mono";
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  opacity: 0;
+}
+
+.nav-list.active {
+  transform: translateX(0);
+  background: #23232e;
+  transition: 0.3s;
+}
+
+.menu {
+  cursor: pointer;
+  display: block;
+}
+
+.menu div {
+  width: 32px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+.menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.menu.active .line2 {
+  opacity: 0;
+}
+
+.menu.active .line3 {
+  transform: rotate(45deg) translate(-7px, -5px);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

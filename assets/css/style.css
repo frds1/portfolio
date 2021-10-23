@@ -174,7 +174,7 @@ footer {
     justify-content: right;
   }
   .social {
-    justify-content: center;
+    justify-content: flex-end;
     grid-template-columns: repeat(auto-fit, 4rem);
   }
   footer {
@@ -194,7 +194,7 @@ footer {
     justify-content: right;
   }
   .social {
-    justify-content: center;
+    justify-content: flex-end;
     grid-template-columns: repeat(auto-fit, 4.5rem);
   }
   footer {

@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
+body,
+html,
+main {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  min-height: 95vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,53 +22,62 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-	padding-top: 25rem;
-	padding-bottom: 25rem;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
 }
 
 .nome {
   color: rgb(250, 240, 226);
   font-family: "Space Mono";
-  font-size: 4rem;
-  padding-right: 2rem;
+  display: flex;
 }
 
 .nome:after {
-    content: '|';
-    margin-left: 5px;
-    opacity: 1;
-    animation: pisca .7s infinite;
+  content: "|";
+  opacity: 1;
+  animation: pisca 0.7s infinite;
+  display: flex;
+  justify-content: right;
 }
 
 @keyframes pisca {
-    0%, 100%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 0;
-    }
-}
-
-.principal {
-  min-width: 40rem;
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .social {
   display: grid;
-  gap: 0.25rem;
-  grid-template-columns: repeat(auto-fit, 5rem);
   justify-content: center;
 }
 
+i {
+  width: 100%;
+  height: 100%;
+  color: antiquewhite;
+  position: relative;
+}
+
+i:hover {
+  top: -4px;
+  transition: all 0.2s ease-in-out;
+}
+
 .imagem-principal {
-  width: 20%;
-  height: 20%;
   border-radius: 50%;
   border: 4px solid rgb(250, 240, 226);
 }
@@ -73,115 +87,159 @@ p {
   font-family: "Space Mono";
 }
 
-i {
-  font-size: 4rem;
-  color: antiquewhite;
-  position: relative;
-  top: 0;
-}
-
-i:hover {
-  top: -4px;
-  transition: all 0.2s ease-in-out;
-}
-
 footer {
   margin: auto;
   bottom: 0;
   position: fixed;
 }
 
-a {
-  color : #fff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-a:hover {
-  opacity: 0.7;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  height: 8vh;
-  justify-content: end;
-  padding-inline-end: 1rem;
-  padding-left: 1rem;
-  position: absolute;
-  right: 0;
-  width: 15vw;
-  transition: 0.3s;
-  top: 0;
-}
-
-.navbar.active {
-  background-color: #23232e;
-  transition: 0.3s;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  position: absolute;
-  top: 8vh;
-  right: 0;
-  width: 15vw;
-  height: 92vh;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-family: "Space Mono";
-}
-
-.nav-list li {
-  letter-spacing: 3px;
-  opacity: 0;
-}
-
-.nav-list.active {
-  transform: translateX(0);
-  background: #23232e;
-  transition: 0.3s;
-}
-
-.menu {
-  cursor: pointer;
-  display: block;
-}
-
-.menu div {
-  width: 32px;
-  height: 2px;
-  background-color: #fff;
-  margin: 8px;
-  transition: 0.3s;
-}
-
-.menu.active .line1 {
-  transform: rotate(-45deg) translate(-8px, 8px);
-}
-
-.menu.active .line2 {
-  opacity: 0;
-}
-
-.menu.active .line3 {
-  transform: rotate(45deg) translate(-7px, -5px);
-}
-
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
+@media (max-width: 24em) {
+  .imagem-principal {
+    width: 7.5rem;
+    height: 7.5rem;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  .nome,
+  i {
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  .social {
+    grid-template-columns: repeat(auto-fit, 2.5rem);
+    padding-bottom: 1em;
+  }
+  footer {
+    font-size: 0.15rem;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .principal {
+    min-width: 15rem;
+  }
+}
+
+@media (min-width: 24em) and (max-width: 36em) {
+  .imagem-principal {
+    width: 10rem;
+    height: 10rem;
+  }
+  .nome,
+  i {
+    justify-content: center;
+    font-size: 2rem;
+  }
+  .social {
+    grid-template-columns: repeat(auto-fit, 3rem);
+    padding-bottom: 1em;
+  }
+  footer {
+    font-size: 0.3rem;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .principal {
+    min-width: 18rem;
+  }
+}
+
+@media (min-width: 36em) and (max-width: 48em) {
+  .imagem-principal {
+    width: 10.5rem;
+    height: 10.5rem;
+  }
+  .nome,
+  i {
+    justify-content: center;
+    font-size: 2.5rem;
+  }
+  .social {
+    grid-template-columns: repeat(auto-fit, 3.5rem);
+    padding-bottom: 1em;
+  }
+  footer {
+    font-size: 0.55rem;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .principal {
+    min-width: 21rem;
+  }
+}
+
+@media (min-width: 48em) and (max-width: 60em) {
+  .imagem-principal {
+    width: 13rem;
+    height: 13rem;
+  }
+  .nome,
+  i {
+    font-size: 3rem;
+    padding-right: 2rem;
+    justify-content: right;
+  }
+  .social {
+    grid-template-columns: repeat(auto-fit, 4rem);
+  }
+  footer {
+    font-size: 0.7rem;
+  }
+  .container {
+    flex-direction: row;
+  }
+  .principal {
+    min-width: 30rem;
+  }
+}
+
+@media (min-width: 60em) and (max-width: 120em) {
+  .imagem-principal {
+    width: 17.5rem;
+    height: 17.5rem;
+  }
+  .nome,
+  i {
+    font-size: 3.5rem;
+    padding-right: 2rem;
+    justify-content: right;
+  }
+  .social {
+    grid-template-columns: repeat(auto-fit, 4.5rem);
+  }
+  footer {
+    font-size: 0.85rem;
+  }
+  .container {
+    flex-direction: row;
+  }
+  .principal {
+    min-width: 34rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .imagem-principal {
+    width: 20rem;
+    height: 20rem;
+  }
+  .nome,
+  i {
+    font-size: 4rem;
+    padding-right: 2rem;
+    justify-content: right;
+  }
+  .social {
+    gap: 0.25rem;
+    grid-template-columns: repeat(auto-fit, 5rem);
+  }
+  footer {
+    font-size: 1rem;
+  }
+  .container {
+    flex-direction: row;
+  }
+  .principal {
+    min-width: 40rem;
   }
 }
